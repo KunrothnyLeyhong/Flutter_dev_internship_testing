@@ -30,7 +30,6 @@ class ProductProvider extends ChangeNotifier {
         final data = json.decode(resp.body) as List<dynamic>;
         _all = data.map((e) => Product.fromJson(e)).toList();
         _visible = List.of(_all);
-        // _currentPage = 1;
       } else {
         errorMessage = 'Failed: ${resp.statusCode}';
       }
@@ -52,7 +51,6 @@ class ProductProvider extends ChangeNotifier {
           .where((p) => p.productName.toLowerCase().contains(q))
           .toList();
     }
-    // _currentPage = 1;
     notifyListeners();
   }
 
@@ -60,14 +58,12 @@ class ProductProvider extends ChangeNotifier {
   void sortByPrice({bool ascending = true}) {
     _visible.sort((a, b) =>
     ascending ? a.price.compareTo(b.price) : b.price.compareTo(a.price));
-    // _currentPage = 1;
     notifyListeners();
   }
 
   void sortByStock({bool ascending = true}) {
     _visible.sort((a, b) =>
     ascending ? a.stock.compareTo(b.stock) : b.stock.compareTo(a.stock));
-    // _currentPage = 1;
     notifyListeners();
   }
 
