@@ -18,20 +18,6 @@ class ProductProvider extends ChangeNotifier {
   bool isLoading = false;
   String? errorMessage;
 
-  // Pagination
-  // int _pageSize = 5;
-  // int _currentPage = 1;
-  // int get currentPage => _currentPage;
-  // int get totalPages =>
-  //     _visible.isEmpty ? 1 : ((_visible.length - 1) ~/ _pageSize) + 1;
-  //
-  // /// Items shown on current page
-  // List<Product> get pagedProducts {
-  //   final start = (_currentPage - 1) * _pageSize;
-  //   final end = (start + _pageSize).clamp(0, _visible.length);
-  //   return _visible.sublist(start, end);
-  // }
-
   // --- FETCH ---
   Future<void> fetchProducts() async {
     isLoading = true;
@@ -84,16 +70,6 @@ class ProductProvider extends ChangeNotifier {
     // _currentPage = 1;
     notifyListeners();
   }
-
-  // --- PAGE CONTROLS ---
-  // void goToPage(int page) {
-  //   if (page < 1 || page > totalPages) return;
-  //   _currentPage = page;
-  //   notifyListeners();
-  // }
-  //
-  // void nextPage() => goToPage(_currentPage + 1);
-  // void prevPage() => goToPage(_currentPage - 1);
 
   // --- ADD ---
   Future<bool> addProduct({

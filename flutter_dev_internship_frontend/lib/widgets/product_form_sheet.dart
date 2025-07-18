@@ -184,23 +184,6 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
     );
   }
 
-  // Widget _buildDropdown({
-  //   required String label,
-  //   required String value,
-  //   required ValueChanged<String?> onChanged,
-  // }) {
-  //   return DropdownButtonFormField<String>(
-  //     value: value,
-  //     decoration: InputDecoration(labelText: label),
-  //     items: const [
-  //       DropdownMenuItem(value: 'Cleanser', child: Text('Default')),
-  //       DropdownMenuItem(value: 'Cosmetic', child: Text('Cosmetic')),
-  //       DropdownMenuItem(value: 'Supplement', child: Text('Supplement')),
-  //     ],
-  //     onChanged: onChanged,
-  //   );
-  // }
-
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
