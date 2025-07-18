@@ -94,13 +94,6 @@ class _ProductFormSheetState extends State<ProductFormSheet> {
                       ),
                     ),
                     const SizedBox(width: 16),
-                    // Expanded(
-                    //   child: _buildDropdown(
-                    //     label: 'Product Type',
-                    //     value: _type,
-                    //     onChanged: (v) => setState(() => _type = v ?? 'Default'),
-                    //   ),
-                    // ),
                   ],
                 ),
                 const SizedBox(height: 16),
